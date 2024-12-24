@@ -1,7 +1,11 @@
+import "./globals.css";
+import { Metadata } from "next";
 
-export const metadata = {
-    title: "Hello World",
-    description: "A simple Hello World app",
+export const metadata: Metadata = {
+    title: {
+        default: "My App default",
+        template: "%s | My App template",
+    }
 }
 
 export default function RootLayout({ children }: {
@@ -10,7 +14,21 @@ export default function RootLayout({ children }: {
     return (
         <html lang="en">
             <body>
+                <header
+                    style={{backgroundColor: "lightblue", padding: "1rem"}}
+                >
+                    <p>
+                        Header
+                    </p>
+                </header>
                 {children}
+                <footer
+                    style={{ backgroundColor: "lightblue", padding: "1rem"}}
+                >
+                    <p>
+                        Footer
+                    </p>
+                </footer>
             </body>
         </html>
 
